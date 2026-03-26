@@ -11,9 +11,9 @@
 :root {
   /* Brand */
   --blue:         #1E90FF;
-  --blue-dim:     #1E90FF44;
-  --blue-faint:   #1E90FF11;
-  --blue-glow:    #1E90FF88;
+  --blue-dim:     rgba(30, 144, 255, 0.27);
+  --blue-faint:   rgba(30, 144, 255, 0.07);
+  --blue-glow:    rgba(30, 144, 255, 0.53);
 
   /* Backgrounds */
   --bg:           #07090f;
@@ -22,7 +22,7 @@
 
   /* Borders */
   --border:       #1a2438;
-  --border-lit:   #1E90FF33;
+  --border-lit:   rgba(30, 144, 255, 0.20);
 
   /* Text */
   --text:         #c8d8f0;
@@ -513,13 +513,13 @@ a { color: var(--blue); text-decoration: none; }
 
 .btn-danger {
   background: transparent;
-  border-color: #ff4d6a44;
+  border-color: rgba(255, 77, 106, 0.27);
   color: var(--danger);
 }
 .btn-danger:hover {
-  background: #ff4d6a11;
+  background: rgba(255, 77, 106, 0.07);
   border-color: var(--danger);
-  box-shadow: 0 0 12px #ff4d6a44;
+  box-shadow: 0 0 12px rgba(255, 77, 106, 0.27);
 }
 
 .btn-sm {
@@ -545,9 +545,9 @@ a { color: var(--blue); text-decoration: none; }
 }
 
 .tag-blue    { color: var(--blue);    border-color: var(--blue-dim);   background: var(--blue-faint); }
-.tag-green   { color: var(--success); border-color: #00e5a022;         background: #00e5a011; }
-.tag-yellow  { color: var(--warn);    border-color: #f0b42922;         background: #f0b42911; }
-.tag-red     { color: var(--danger);  border-color: #ff4d6a22;         background: #ff4d6a11; }
+.tag-green   { color: var(--success); border-color: rgba(0, 229, 160, 0.13);         background: rgba(0, 229, 160, 0.07); }
+.tag-yellow  { color: var(--warn);    border-color: rgba(240, 180, 41, 0.13);         background: rgba(240, 180, 41, 0.07); }
+.tag-red     { color: var(--danger);  border-color: rgba(255, 77, 106, 0.13);         background: rgba(255, 77, 106, 0.07); }
 .tag-neutral { color: var(--text-dim); border-color: var(--border);    background: var(--bg); }
 
 /* Status pills */
@@ -899,7 +899,7 @@ a { color: var(--blue); text-decoration: none; }
 }
 
 .ef-glow {
-  background: radial-gradient(circle at 30% 50%, #1E90FF22 0%, transparent 65%);
+  background: radial-gradient(circle at 30% 50%, rgba(30, 144, 255, 0.13) 0%, transparent 65%);
   background-color: var(--bg);
 }
 
@@ -1052,20 +1052,20 @@ a { color: var(--blue); text-decoration: none; }
             <div class="swatch-info"><div class="swatch-name">Blue</div><div class="swatch-var">--blue</div><div class="swatch-hex">#1E90FF</div></div>
           </div>
           <div class="color-swatch">
-            <div class="swatch-block" style="background: #1E90FF44;"></div>
-            <div class="swatch-info"><div class="swatch-name">Blue Dim</div><div class="swatch-var">--blue-dim</div><div class="swatch-hex">#1E90FF44</div></div>
+            <div class="swatch-block" style="background: rgba(30, 144, 255, 0.27);"></div>
+            <div class="swatch-info"><div class="swatch-name">Blue Dim</div><div class="swatch-var">--blue-dim</div><div class="swatch-hex">rgba(30, 144, 255, 0.27)</div></div>
           </div>
           <div class="color-swatch">
-            <div class="swatch-block" style="background: #1E90FF11; border: 1px solid #1a2438;" class="bordered"></div>
-            <div class="swatch-info"><div class="swatch-name">Blue Faint</div><div class="swatch-var">--blue-faint</div><div class="swatch-hex">#1E90FF11</div></div>
+            <div class="swatch-block" style="background: rgba(30, 144, 255, 0.07); border: 1px solid #1a2438;" class="bordered"></div>
+            <div class="swatch-info"><div class="swatch-name">Blue Faint</div><div class="swatch-var">--blue-faint</div><div class="swatch-hex">rgba(30, 144, 255, 0.07)</div></div>
           </div>
           <div class="color-swatch">
-            <div class="swatch-block" style="background: #1E90FF88;"></div>
-            <div class="swatch-info"><div class="swatch-name">Blue Glow</div><div class="swatch-var">--blue-glow</div><div class="swatch-hex">#1E90FF88</div></div>
+            <div class="swatch-block" style="background: rgba(30, 144, 255, 0.53);"></div>
+            <div class="swatch-info"><div class="swatch-name">Blue Glow</div><div class="swatch-var">--blue-glow</div><div class="swatch-hex">rgba(30, 144, 255, 0.53)</div></div>
           </div>
           <div class="color-swatch">
-            <div class="swatch-block" style="background: #1E90FF33; border: 1px solid #1a2438;"></div>
-            <div class="swatch-info"><div class="swatch-name">Border Lit</div><div class="swatch-var">--border-lit</div><div class="swatch-hex">#1E90FF33</div></div>
+            <div class="swatch-block" style="background: rgba(30, 144, 255, 0.20); border: 1px solid #1a2438;"></div>
+            <div class="swatch-info"><div class="swatch-name">Border Lit</div><div class="swatch-var">--border-lit</div><div class="swatch-hex">rgba(30, 144, 255, 0.20)</div></div>
           </div>
         </div>
       </div>
@@ -1097,8 +1097,8 @@ a { color: var(--blue); text-decoration: none; }
             <div class="swatch-info"><div class="swatch-name">Border</div><div class="swatch-var">--border</div><div class="swatch-hex">#1a2438</div></div>
           </div>
           <div class="color-swatch">
-            <div class="swatch-block" style="background: #1E90FF33;"></div>
-            <div class="swatch-info"><div class="swatch-name">Border Lit</div><div class="swatch-var">--border-lit</div><div class="swatch-hex">#1E90FF33</div></div>
+            <div class="swatch-block" style="background: rgba(30, 144, 255, 0.20);"></div>
+            <div class="swatch-info"><div class="swatch-name">Border Lit</div><div class="swatch-var">--border-lit</div><div class="swatch-hex">rgba(30, 144, 255, 0.20)</div></div>
           </div>
         </div>
         <p class="sg-token-desc">Default border is a cool deep navy. Lit border activates on hover — a blue-tinted version that signals interactivity without being distracting at rest.</p>
