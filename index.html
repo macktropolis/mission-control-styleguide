@@ -1437,38 +1437,137 @@ a { color: var(--blue); text-decoration: none; }
         <span class="sg-section-title">Tags & Status</span>
       </div>
 
+      <!-- Status Tags -->
       <div class="sg-sub">
         <div class="sg-sub-title">Status Tags</div>
-        <div class="comp-row">
+
+        <!-- Bare tags -->
+        <div class="comp-row" style="margin-bottom: 20px;">
           <span class="tag tag-blue">Reference</span>
           <span class="tag tag-green">Complete</span>
           <span class="tag tag-yellow">In Progress</span>
           <span class="tag tag-red">Blocked</span>
           <span class="tag tag-neutral">Draft</span>
         </div>
-        <p class="sg-token-desc">Tags appear below item metadata in list items. 9px Space Mono, uppercase, 0.08em letter-spacing. Each variant uses a matching bg-faint + border-dim + text-color triple — never solid fills.</p>
+
+        <!-- Tags in context: list items -->
+        <div class="demo-panel" style="max-width: 520px;">
+          <div class="demo-panel-head">
+            <div class="demo-panel-title">Tags in context — List Items</div>
+          </div>
+
+          <div class="demo-list-item">
+            <div class="item-icon-box">📄</div>
+            <div class="item-text">
+              <div class="item-name">DSM Migration — Phase 2 Checklist</div>
+              <div class="item-sub">Updated 2h ago · ToyBox</div>
+              <span class="tag tag-yellow" style="margin-top: 5px; display: inline-block;">In Progress</span>
+            </div>
+            <div style="color: var(--blue); font-size: 14px;">›</div>
+          </div>
+
+          <div class="demo-list-item">
+            <div class="item-icon-box">📘</div>
+            <div class="item-text">
+              <div class="item-name">ExecuteSQL Aggregate Performance Notes</div>
+              <div class="item-sub">Updated last week · Performance</div>
+              <span class="tag tag-blue" style="margin-top: 5px; display: inline-block;">Reference</span>
+            </div>
+            <div style="color: var(--blue); font-size: 14px;">›</div>
+          </div>
+
+          <div class="demo-list-item">
+            <div class="item-icon-box">📗</div>
+            <div class="item-text">
+              <div class="item-name">Script Prefix Conventions</div>
+              <div class="item-sub">Updated 3 days ago · Naming</div>
+              <span class="tag tag-green" style="margin-top: 5px; display: inline-block;">Complete</span>
+            </div>
+            <div style="color: var(--blue); font-size: 14px;">›</div>
+          </div>
+
+          <div class="demo-list-item" style="border-bottom: none;">
+            <div class="item-icon-box">📕</div>
+            <div class="item-text">
+              <div class="item-name">Data API OAuth Integration</div>
+              <div class="item-sub">Updated today · API</div>
+              <span class="tag tag-red" style="margin-top: 5px; display: inline-block;">Blocked</span>
+            </div>
+            <div style="color: var(--blue); font-size: 14px;">›</div>
+          </div>
+        </div>
+
+        <p class="sg-token-desc" style="margin-top: 12px;">Tags sit below the item metadata line with 5px top margin. Each variant uses a matching bg-faint + border-dim + text-color triple — never solid fills. 9px mono, uppercase, 0.08em letter-spacing.</p>
       </div>
 
+      <!-- Status Pills -->
       <div class="sg-sub">
         <div class="sg-sub-title">Status Pills</div>
-        <div class="comp-row">
+
+        <!-- Bare pills -->
+        <div class="comp-row" style="margin-bottom: 20px; flex-wrap: wrap; gap: 16px;">
           <div class="status-pill"><div class="status-dot dot-green"></div>Systems Nominal</div>
           <div class="status-pill"><div class="status-dot dot-yellow"></div>Sync Pending</div>
           <div class="status-pill"><div class="status-dot dot-red"></div>Connection Lost</div>
           <div class="status-pill"><div class="status-dot dot-blue"></div>Processing</div>
         </div>
-        <p class="sg-token-desc">Status pills are used in the topbar and for system-level states. The dot always has a matching box-shadow glow. The "Systems Nominal" green dot uses the pulse animation.</p>
+
+        <!-- Pills in context: topbar strip -->
+        <div style="background: var(--bg-panel); border: 1px solid var(--border); border-radius: 4px; overflow: hidden; max-width: 600px;">
+          <!-- Topbar sim -->
+          <div style="display: flex; align-items: center; gap: 14px; padding: 0 18px; height: 48px; border-bottom: 1px solid var(--border); background: linear-gradient(90deg, rgba(10,16,32,1) 0%, var(--bg-panel) 100%); position: relative;">
+            <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, var(--blue), transparent 60%);"></div>
+            <!-- Logo stub -->
+            <div style="font-family: var(--display); font-size: 13px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #fff; white-space: nowrap;">Mission <span style="color: var(--blue);">Control</span></div>
+            <div style="width: 1px; height: 16px; background: var(--border);"></div>
+            <!-- Pills -->
+            <div class="status-pill"><div class="status-dot dot-green" style="animation: pulse 2s ease-in-out infinite;"></div>Systems Nominal</div>
+            <div style="margin-left: auto; display: flex; align-items: center; gap: 16px;">
+              <div class="status-pill"><div class="status-dot dot-yellow"></div>Sync Pending</div>
+              <div style="width: 1px; height: 16px; background: var(--border);"></div>
+              <div style="font-family: var(--mono); font-size: 11px; font-weight: 700; color: var(--blue); letter-spacing: 0.08em;">14:32:07</div>
+            </div>
+          </div>
+          <!-- Label -->
+          <div style="padding: 10px 18px; font-size: 10px; color: var(--text-faint); letter-spacing: 0.1em; text-transform: uppercase;">↑ Status pills in topbar context</div>
+        </div>
+
+        <p class="sg-token-desc" style="margin-top: 12px;">Status pills live in the topbar and system-level areas. The dot is always 6px with a matching box-shadow glow. The green "Systems Nominal" dot uses the <code style="color: var(--success); font-family: var(--mono);">pulse</code> animation. Pills use 10px mono, uppercase, 0.1em letter-spacing.</p>
       </div>
 
+      <!-- Count Badge -->
       <div class="sg-sub">
         <div class="sg-sub-title">Count Badge</div>
-        <div class="comp-row">
-          <div style="display: flex; align-items: center; gap: 8px; background: var(--bg-card); padding: 6px 12px; border: 1px solid var(--border); border-radius: 3px;">
-            <span style="font-family: var(--mono); font-size: 12px; color: var(--text-dim);">Dev Notes</span>
-            <span style="font-family: var(--mono); font-size: 9px; color: var(--blue); background: var(--blue-dim); padding: 2px 6px; border-radius: 10px; letter-spacing: 0.05em;">24</span>
+
+        <!-- Badge in context: nav items -->
+        <div style="background: var(--bg-panel); border: 1px solid var(--border); border-radius: 4px; overflow: hidden; max-width: 220px;">
+          <div style="padding: 8px 20px 4px; font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-faint); font-family: var(--mono);">// Navigation</div>
+
+          <div class="demo-nav-item active">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="1" width="6" height="6" rx="1"/><rect x="9" y="1" width="6" height="6" rx="1"/><rect x="1" y="9" width="6" height="6" rx="1"/><rect x="9" y="9" width="6" height="6" rx="1"/></svg>
+            Dashboard
+          </div>
+
+          <div class="demo-nav-item" style="justify-content: flex-start;">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2H3a1 1 0 00-1 1v10a1 1 0 001 1h10a1 1 0 001-1V3a1 1 0 00-1-1z"/><line x1="5" y1="6" x2="11" y2="6"/><line x1="5" y1="9" x2="9" y2="9"/></svg>
+            Dev Notes
+            <span style="margin-left: auto; font-family: var(--mono); font-size: 9px; color: var(--blue); background: rgba(30, 144, 255, 0.27); padding: 2px 6px; border-radius: 10px; letter-spacing: 0.05em;">24</span>
+          </div>
+
+          <div class="demo-nav-item" style="justify-content: flex-start;">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 2h8a1 1 0 011 1v10a1 1 0 01-1 1H4a1 1 0 01-1-1V3a1 1 0 011-1z"/><line x1="5" y1="6" x2="11" y2="6"/><line x1="5" y1="9" x2="11" y2="9"/></svg>
+            References
+            <span style="margin-left: auto; font-family: var(--mono); font-size: 9px; color: var(--blue); background: rgba(30, 144, 255, 0.27); padding: 2px 6px; border-radius: 10px; letter-spacing: 0.05em;">12</span>
+          </div>
+
+          <div class="demo-nav-item" style="justify-content: flex-start;">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6"/><line x1="8" y1="2" x2="8" y2="14"/><path d="M2 8c0-2 2.7-4 6-4s6 2 6 4-2.7 4-6 4-6-2-6-4z"/></svg>
+            Web Links
+            <span style="margin-left: auto; font-family: var(--mono); font-size: 9px; color: var(--blue); background: rgba(30, 144, 255, 0.27); padding: 2px 6px; border-radius: 10px; letter-spacing: 0.05em;">38</span>
           </div>
         </div>
-        <p class="sg-token-desc">Inline count badge used in sidebar nav items. Pill shape (10px border-radius), blue-dim background, blue text. Pushes right via margin-left: auto.</p>
+
+        <p class="sg-token-desc" style="margin-top: 12px;">Count badges are pill-shaped (10px border-radius), blue-dim background, blue text. They sit at the far right of nav items via <code style="color: var(--success); font-family: var(--mono);">margin-left: auto</code>. Not every nav item needs one — use only where a running count adds meaningful context.</p>
       </div>
     </div>
 
