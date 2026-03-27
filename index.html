@@ -40,15 +40,15 @@
   /* Mono: Menlo (macOS) → Consolas (Windows) → Courier New (universal fallback) */
   --mono:         'Menlo', 'Consolas', 'Courier New', monospace;
 
-  /* Spacing scale */
-  --sp-1: 4px;
-  --sp-2: 8px;
-  --sp-3: 12px;
-  --sp-4: 16px;
-  --sp-5: 20px;
-  --sp-6: 24px;
-  --sp-7: 28px;
-  --sp-8: 32px;
+  /* Spacing scale — FileMaker grid: Minor Step = 10px, Major Grid = 50px */
+  --sp-1:   5px;  /* half minor step */
+  --sp-2:  10px;  /* 1 minor step */
+  --sp-3:  20px;  /* 2 minor steps */
+  --sp-4:  30px;  /* 3 minor steps */
+  --sp-5:  40px;  /* 4 minor steps */
+  --sp-6:  50px;  /* 1 major grid unit */
+  --sp-7: 100px;  /* 2 major grid units */
+  --sp-8: 150px;  /* 3 major grid units */
 }
 
 /* ────────────────────────────────────────────
@@ -1231,49 +1231,152 @@ a { color: var(--blue); text-decoration: none; }
         <span class="sg-section-title">Spacing Scale</span>
       </div>
 
-      <div class="spacing-stack">
-        <div class="spacing-row">
-          <div class="spacing-label">--sp-1</div>
-          <div class="spacing-bar" style="width: 4px;"></div>
-          <div class="spacing-val">4px — Micro gap (icon-to-label, dot-to-text)</div>
-        </div>
-        <div class="spacing-row">
-          <div class="spacing-label">--sp-2</div>
-          <div class="spacing-bar" style="width: 8px;"></div>
-          <div class="spacing-val">8px — Tight gap (badge margin, inline elements)</div>
-        </div>
-        <div class="spacing-row">
-          <div class="spacing-label">--sp-3</div>
-          <div class="spacing-bar" style="width: 12px;"></div>
-          <div class="spacing-val">12px — List item internal gap</div>
-        </div>
-        <div class="spacing-row">
-          <div class="spacing-label">--sp-4</div>
-          <div class="spacing-bar" style="width: 16px;"></div>
-          <div class="spacing-val">16px — Card padding, grid gap</div>
-        </div>
-        <div class="spacing-row">
-          <div class="spacing-label">--sp-5</div>
-          <div class="spacing-bar" style="width: 20px;"></div>
-          <div class="spacing-val">20px — Sidebar padding, section rhythm</div>
-        </div>
-        <div class="spacing-row">
-          <div class="spacing-label">--sp-6</div>
-          <div class="spacing-bar" style="width: 24px;"></div>
-          <div class="spacing-val">24px — Main content padding, section gap</div>
-        </div>
-        <div class="spacing-row">
-          <div class="spacing-label">--sp-7</div>
-          <div class="spacing-bar" style="width: 28px;"></div>
-          <div class="spacing-val">28px — Major section padding</div>
-        </div>
-        <div class="spacing-row">
-          <div class="spacing-label">--sp-8</div>
-          <div class="spacing-bar" style="width: 32px;"></div>
-          <div class="spacing-val">32px — Top-level layout gaps</div>
+      <!-- Minor steps -->
+      <div class="sg-sub">
+        <div class="sg-sub-title">Minor Steps — 10px base unit, 5px half-step</div>
+        <div class="spacing-stack">
+          <div class="spacing-row">
+            <div class="spacing-label">--sp-1</div>
+            <div class="spacing-bar" style="width: 5px;"></div>
+            <div class="spacing-val">5px · ½ step — Micro gap, icon-to-label, dot-to-text</div>
+          </div>
+          <div class="spacing-row">
+            <div class="spacing-label">--sp-2</div>
+            <div class="spacing-bar" style="width: 10px;"></div>
+            <div class="spacing-val">10px · 1 step — Badge margin, tight inline spacing</div>
+          </div>
+          <div class="spacing-row">
+            <div class="spacing-label">--sp-3</div>
+            <div class="spacing-bar" style="width: 20px;"></div>
+            <div class="spacing-val">20px · 2 steps — List item padding (V), field label offset</div>
+          </div>
+          <div class="spacing-row">
+            <div class="spacing-label">--sp-4</div>
+            <div class="spacing-bar" style="width: 30px;"></div>
+            <div class="spacing-val">30px · 3 steps — Panel header padding (V), card internal gap</div>
+          </div>
+          <div class="spacing-row">
+            <div class="spacing-label">--sp-5</div>
+            <div class="spacing-bar" style="width: 40px;"></div>
+            <div class="spacing-val">40px · 4 steps — Card internal padding, grid column gap</div>
+          </div>
         </div>
       </div>
-      <p class="sg-token-desc" style="margin-top: 16px;">The base unit is 4px. All spacing values are multiples. Panel padding defaults to 16–18px; list items use 12px padding vertically. The sidebar is 220px wide; topbar is 56px tall.</p>
+
+      <!-- Major grid -->
+      <div class="sg-sub">
+        <div class="sg-sub-title">Major Grid — 50px unit</div>
+        <div class="spacing-stack">
+          <div class="spacing-row">
+            <div class="spacing-label">--sp-6</div>
+            <div class="spacing-bar" style="width: 50px; background: var(--blue); border-color: var(--blue); box-shadow: 0 0 8px rgba(30,144,255,0.4);"></div>
+            <div class="spacing-val" style="color: var(--blue);">50px · 1 major unit — Primary layout increment, topbar height, row height</div>
+          </div>
+          <div class="spacing-row">
+            <div class="spacing-label">--sp-7</div>
+            <div class="spacing-bar" style="width: 100px; background: var(--blue); border-color: var(--blue); box-shadow: 0 0 8px rgba(30,144,255,0.4);"></div>
+            <div class="spacing-val" style="color: var(--blue);">100px · 2 major units — Panel minimum height, sidebar section blocks</div>
+          </div>
+          <div class="spacing-row">
+            <div class="spacing-label">--sp-8</div>
+            <div class="spacing-bar" style="width: 150px; background: var(--blue); border-color: var(--blue); box-shadow: 0 0 8px rgba(30,144,255,0.4);"></div>
+            <div class="spacing-val" style="color: var(--blue);">150px · 3 major units — Sidebar width, modal section height</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reference grid -->
+      <div class="sg-sub">
+        <div class="sg-sub-title">FileMaker Grid Reference</div>
+        <div class="demo-panel" style="overflow: hidden;">
+          <div class="demo-panel-head">
+            <div class="demo-panel-title">Layout Grid · 500px wide sample</div>
+            <span class="panel-count">Major = 50px · Minor = 10px</span>
+          </div>
+          <div style="padding: 20px;">
+            <!-- Grid visual -->
+            <div style="position: relative; height: 60px; width: 500px; max-width: 100%;">
+              <!-- Minor grid lines -->
+              <div style="position: absolute; inset: 0; display: flex;">
+                <div style="flex: 1; border-right: 1px solid rgba(30,144,255,0.08);"></div>
+                <div style="flex: 1; border-right: 1px solid rgba(30,144,255,0.08);"></div>
+                <div style="flex: 1; border-right: 1px solid rgba(30,144,255,0.08);"></div>
+                <div style="flex: 1; border-right: 1px solid rgba(30,144,255,0.08);"></div>
+                <div style="flex: 1; border-right: 1px solid rgba(30,144,255,0.25);"></div>
+                <div style="flex: 1; border-right: 1px solid rgba(30,144,255,0.08);"></div>
+                <div style="flex: 1; border-right: 1px solid rgba(30,144,255,0.08);"></div>
+                <div style="flex: 1; border-right: 1px solid rgba(30,144,255,0.08);"></div>
+                <div style="flex: 1; border-right: 1px solid rgba(30,144,255,0.08);"></div>
+                <div style="flex: 1; border-right: 1px solid rgba(30,144,255,0.25);"></div>
+                <div style="flex: 1; border-right: 1px solid rgba(30,144,255,0.08);"></div>
+                <div style="flex: 1; border-right: 1px solid rgba(30,144,255,0.08);"></div>
+                <div style="flex: 1; border-right: 1px solid rgba(30,144,255,0.08);"></div>
+                <div style="flex: 1; border-right: 1px solid rgba(30,144,255,0.08);"></div>
+                <div style="flex: 1; border-right: 1px solid rgba(30,144,255,0.25);"></div>
+                <div style="flex: 1; border-right: 1px solid rgba(30,144,255,0.08);"></div>
+                <div style="flex: 1; border-right: 1px solid rgba(30,144,255,0.08);"></div>
+                <div style="flex: 1; border-right: 1px solid rgba(30,144,255,0.08);"></div>
+                <div style="flex: 1; border-right: 1px solid rgba(30,144,255,0.08);"></div>
+                <div style="flex: 1; border-right: 1px solid rgba(30,144,255,0.25);"></div>
+                <div style="flex: 1; border-right: 1px solid rgba(30,144,255,0.08);"></div>
+                <div style="flex: 1; border-right: 1px solid rgba(30,144,255,0.08);"></div>
+                <div style="flex: 1; border-right: 1px solid rgba(30,144,255,0.08);"></div>
+                <div style="flex: 1; border-right: 1px solid rgba(30,144,255,0.08);"></div>
+                <div style="flex: 1; border-right: 1px solid rgba(30,144,255,0.25);"></div>
+                <div style="flex: 1; border-right: 1px solid rgba(30,144,255,0.08);"></div>
+                <div style="flex: 1; border-right: 1px solid rgba(30,144,255,0.08);"></div>
+                <div style="flex: 1; border-right: 1px solid rgba(30,144,255,0.08);"></div>
+                <div style="flex: 1; border-right: 1px solid rgba(30,144,255,0.08);"></div>
+                <div style="flex: 1; border-right: 1px solid rgba(30,144,255,0.25);"></div>
+                <div style="flex: 1; border-right: 1px solid rgba(30,144,255,0.08);"></div>
+                <div style="flex: 1; border-right: 1px solid rgba(30,144,255,0.08);"></div>
+                <div style="flex: 1; border-right: 1px solid rgba(30,144,255,0.08);"></div>
+                <div style="flex: 1; border-right: 1px solid rgba(30,144,255,0.08);"></div>
+                <div style="flex: 1; border-right: 1px solid rgba(30,144,255,0.25);"></div>
+                <div style="flex: 1; border-right: 1px solid rgba(30,144,255,0.08);"></div>
+                <div style="flex: 1; border-right: 1px solid rgba(30,144,255,0.08);"></div>
+                <div style="flex: 1; border-right: 1px solid rgba(30,144,255,0.08);"></div>
+                <div style="flex: 1; border-right: 1px solid rgba(30,144,255,0.08);"></div>
+                <div style="flex: 1; border-right: 1px solid rgba(30,144,255,0.25);"></div>
+                <div style="flex: 1; border-right: 1px solid rgba(30,144,255,0.08);"></div>
+                <div style="flex: 1; border-right: 1px solid rgba(30,144,255,0.08);"></div>
+                <div style="flex: 1; border-right: 1px solid rgba(30,144,255,0.08);"></div>
+                <div style="flex: 1; border-right: 1px solid rgba(30,144,255,0.08);"></div>
+                <div style="flex: 1; border-right: 1px solid rgba(30,144,255,0.25);"></div>
+                <div style="flex: 1; border-right: 1px solid rgba(30,144,255,0.08);"></div>
+                <div style="flex: 1; border-right: 1px solid rgba(30,144,255,0.08);"></div>
+                <div style="flex: 1; border-right: 1px solid rgba(30,144,255,0.08);"></div>
+                <div style="flex: 1; border-right: 1px solid rgba(30,144,255,0.08);"></div>
+                <div style="flex: 1;"></div>
+              </div>
+              <!-- Major tick labels -->
+              <div style="position: absolute; bottom: 0; left: 0; right: 0; display: flex; pointer-events: none;">
+                <div style="width: 50px; flex-shrink: 0; text-align: right; padding-right: 3px; font-size: 8px; color: var(--blue); font-family: var(--mono); opacity: 0.7; line-height: 1;">50</div>
+                <div style="width: 50px; flex-shrink: 0; text-align: right; padding-right: 3px; font-size: 8px; color: var(--blue); font-family: var(--mono); opacity: 0.7; line-height: 1;">100</div>
+                <div style="width: 50px; flex-shrink: 0; text-align: right; padding-right: 3px; font-size: 8px; color: var(--blue); font-family: var(--mono); opacity: 0.7; line-height: 1;">150</div>
+                <div style="width: 50px; flex-shrink: 0; text-align: right; padding-right: 3px; font-size: 8px; color: var(--blue); font-family: var(--mono); opacity: 0.7; line-height: 1;">200</div>
+                <div style="width: 50px; flex-shrink: 0; text-align: right; padding-right: 3px; font-size: 8px; color: var(--blue); font-family: var(--mono); opacity: 0.7; line-height: 1;">250</div>
+                <div style="width: 50px; flex-shrink: 0; text-align: right; padding-right: 3px; font-size: 8px; color: var(--blue); font-family: var(--mono); opacity: 0.7; line-height: 1;">300</div>
+                <div style="width: 50px; flex-shrink: 0; text-align: right; padding-right: 3px; font-size: 8px; color: var(--blue); font-family: var(--mono); opacity: 0.7; line-height: 1;">350</div>
+                <div style="width: 50px; flex-shrink: 0; text-align: right; padding-right: 3px; font-size: 8px; color: var(--blue); font-family: var(--mono); opacity: 0.7; line-height: 1;">400</div>
+                <div style="width: 50px; flex-shrink: 0; text-align: right; padding-right: 3px; font-size: 8px; color: var(--blue); font-family: var(--mono); opacity: 0.7; line-height: 1;">450</div>
+                <div style="width: 50px; flex-shrink: 0; text-align: right; padding-right: 3px; font-size: 8px; color: var(--blue); font-family: var(--mono); opacity: 0.7; line-height: 1;">500</div>
+              </div>
+              <!-- Legend -->
+              <div style="position: absolute; top: 8px; left: 8px; display: flex; gap: 16px; align-items: center;">
+                <div style="display: flex; align-items: center; gap: 5px; font-size: 9px; color: var(--text-dim); font-family: var(--mono);">
+                  <div style="width: 14px; height: 1px; background: rgba(30,144,255,0.25);"></div> Major 50px
+                </div>
+                <div style="display: flex; align-items: center; gap: 5px; font-size: 9px; color: var(--text-dim); font-family: var(--mono);">
+                  <div style="width: 14px; height: 1px; background: rgba(30,144,255,0.08);"></div> Minor 10px
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="sg-token-desc">The base unit is <strong style="color: var(--text);">10px</strong> (one minor grid step), with <strong style="color: var(--text);">5px</strong> available as a half-step for fine adjustments. All object positions and sizes snap to this unit. The major grid at <strong style="color: var(--text);">50px</strong> governs structural layout — panel heights, row heights, and column widths should be multiples of 50px wherever possible. Use minor steps (10–40px) for internal padding, gaps, and fine alignment within objects; use 5px only for micro-adjustments where a full 10px step is too coarse.</p>
     </div>
 
     <!-- ────────────────── 04 VISUAL EFFECTS ────────────────── -->
